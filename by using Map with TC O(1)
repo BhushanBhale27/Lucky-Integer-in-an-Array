@@ -1,0 +1,25 @@
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+var findLucky = function(arr) {
+    let myMap = new Map();
+    let luckynum = -1
+    for(let i=0;i<arr.length;i++){
+        if(myMap.get(arr[i])==undefined){
+            myMap.set(arr[i],1)
+        }
+        else{
+            myMap.set(arr[i],myMap.get(arr[i])+1)
+        }
+    }
+    for(let i=0;i<arr.length;i++){
+        if(arr[i] == myMap.get(arr[i]) && myMap.get(arr[i])> luckynum)
+        luckynum = myMap.get(arr[i])
+    }
+    return luckynum;
+
+    
+    
+    
+};
