@@ -1,0 +1,18 @@
+/**
+ * @param {number[]} arr
+ * @return {number}
+ */
+var findLucky = function(arr) {
+    let luckynum = -1
+    for(let i=0;i<arr.length;i++){
+        let freq = 0
+        for(let j=0;j<arr.length;j++){
+            if(arr[i]==arr[j])
+            freq++
+        }
+        if(arr[i]==freq && freq>luckynum)
+            luckynum = freq;
+    }
+    return luckynum;
+    
+};
